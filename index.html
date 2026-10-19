@@ -115,7 +115,7 @@
         // WebAssembly(WASM) 실행 옵션 설정
         ort.env.wasm.numThreads = 2;
         // 동등 경로의 'yolo26n.onnx' 파일 로드
-        session = await ort.InferenceSession.create('../yolo26n.onnx', {
+        session = await ort.InferenceSession.create('./yolo26n.onnx', {
           executionProviders: ['webgpu','wasm']
         });
         statusDiv.innerText = "✅ 모델 로드 완료! 실시간 추론 중...";
